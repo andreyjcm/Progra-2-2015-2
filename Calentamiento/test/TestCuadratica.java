@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import Semana1y2.EcuacionCuadratica;
+import Semana1Y2.EcuacionCuadratica;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -247,6 +247,64 @@ public void TestNotPrimeHighNumber ()
     // realice la ejecución de la prueba
     realResult = ecu.PrimeNumber(myTestNumber);
     assertEquals(String.format("Error en la prueba.  Se esperaba " +
+            "[%1s] y se obtuvo [%2s]", expectedResult, realResult), 
+            expectedResult, realResult);        
+}
+
+@Test
+public void TestSumOfDigitsOneDigitNumber()
+{
+    int myTestNumber = 0; 
+    int expectedResult = 0;
+    int realResult;
+    EcuacionCuadratica ecu = new EcuacionCuadratica();
+    // realice la ejecución de la prueba
+    realResult = ecu.SumOfDigits(myTestNumber);
+    assertEquals (String.format ("Error en la prueba.  Se esperaba " +
+            "[%1s] y se obtuvo [%2s]", expectedResult, realResult), 
+            expectedResult, realResult);        
+}
+
+
+@Test
+public void TestSumOfDigitsNumberFive()
+{
+    int myTestNumber = 5; 
+    int expectedResult = 5;
+    int realResult;
+    EcuacionCuadratica ecu = new EcuacionCuadratica();
+    // realice la ejecución de la prueba
+    realResult = ecu.SumOfDigits(myTestNumber);
+    assertEquals (String.format ("Error en la prueba.  Se esperaba " +
+            "[%1s] y se obtuvo [%2s]", expectedResult, realResult), 
+            expectedResult, realResult);        
+}
+
+@Test
+public void TestSumOfDigitsNumberNinetyNine()
+{
+    int myTestNumber = 99; 
+    int expectedResult = 18;
+    int realResult;
+    EcuacionCuadratica ecu = new EcuacionCuadratica();
+    // realice la ejecución de la prueba
+    realResult = ecu.SumOfDigits(myTestNumber);
+    assertEquals (String.format ("Error en la prueba.  Se esperaba " +
+            "[%1s] y se obtuvo [%2s]", expectedResult, realResult), 
+            expectedResult, realResult);        
+}
+
+
+@Test
+public void TestSumOfDigitsLargeNumber()
+{
+    int myTestNumber = 9999999; 
+    int expectedResult = 63;
+    int realResult;
+    EcuacionCuadratica ecu = new EcuacionCuadratica();
+    // realice la ejecución de la prueba
+    realResult = ecu.SumOfDigits(myTestNumber);
+    assertEquals (String.format ("Error en la prueba.  Se esperaba " +
             "[%1s] y se obtuvo [%2s]", expectedResult, realResult), 
             expectedResult, realResult);        
 }

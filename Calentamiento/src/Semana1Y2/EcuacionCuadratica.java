@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Semana1y2;
+package Semana1Y2;
 
 /**
  *
@@ -102,12 +102,19 @@ public class EcuacionCuadratica {
         return (result);
     }
     
-    public int SumOfDigits (int number)
+    public int SumOfDigits(int number)
     {
         int result = 0;
+        int contador = number;
         
+        while(contador > 0 ){
+            result += (contador % 10);
+            contador /= 10; 
+        }
+     
         return result;
     }
+
     
     public boolean MultipleOfThree (int number)
     {
@@ -150,5 +157,7 @@ public class EcuacionCuadratica {
         
         return result;
     }
+
+    
     
 }
