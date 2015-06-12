@@ -10,6 +10,6 @@ package Inheritance;
  *
  * @author laboratorio
  */
-public interface INoCirculares extends IFiguraGeometrica{
-     int cantidadLados  = 0;
+public interface IRectangulo extends IParalelogramo {
+    
 }

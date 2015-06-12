@@ -10,7 +10,9 @@ package Inheritance;
  *
  * @author laboratorio
  */
-public interface ICircular extends IFiguraGeometrica {
-    double radio = 0.0;
-    public double diametro ();
+public interface IPoligono extends IFiguraGeometrica{
+    // Cantidad de lados del polígono
+    public int cantidadLados ();
+    // obtener las medidas del polígono
+    public double[] ObtenerMedidas ();
 }

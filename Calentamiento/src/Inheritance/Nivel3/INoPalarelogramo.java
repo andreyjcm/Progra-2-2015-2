@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Inheritance;
 
 /**
  *
- * @author laboratorio
+ * @author hecferme
  */
-public interface IParalelogramos extends INoCirculares{
+public interface INoPalarelogramo extends ICuadrilatero {
     
 }
