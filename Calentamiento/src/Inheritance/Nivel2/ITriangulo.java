@@ -11,4 +11,5 @@ package Inheritance;
  */
 public interface ITriangulo extends IPoligono{
     public double altura ();
+//    public double[] angulos ();
 }

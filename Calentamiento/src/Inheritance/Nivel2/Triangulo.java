@@ -9,6 +9,34 @@ package Inheritance;
 public class Triangulo implements ITriangulo {
     private double altura = 0.0;
     
+    private double semiperimeter = 0;
+    
+    private double SumarLados ()
+    {
+        double resultado = 0;
+        for (int i = 0; i <= cantidadLados(); i++)
+            resultado +=getLado (i);
+        return (resultado);
+    }
+    
+       @Override
+    public double Perimetro ()
+    {
+        double resultado = 0;
+        resultado = SumarLados ();
+        return (resultado);
+    }    
+    
+    private double getSemiperimeter ()
+    {
+        return this.semiperimeter;
+    }
+    
+    private void setSemiperimeter ()
+    {
+        this.semiperimeter = Perimetro()/ 2.0;
+    }
+    
         public void setAltura (double altura)
         {
             if (altura > 0.0)
@@ -24,6 +52,11 @@ public class Triangulo implements ITriangulo {
     {
         return MedidasLados;
     }
+    
+public double getLado (int indice)    
+{
+    return (MedidasLados [indice]);
+}
     public void getLados (double lado1, double lado2, double lado3)
     {
         lado1 = MedidasLados [0];
@@ -43,6 +76,7 @@ public class Triangulo implements ITriangulo {
             MedidasLados [0] = catetoMenor;
             MedidasLados [1] = catetoMayor;
             MedidasLados [2] = hipotenusa;
+            setSemiperimeter();
         }      
         // ToDo:  caso de error cuando el triángulo no es válido
     }
@@ -80,12 +114,10 @@ public class Triangulo implements ITriangulo {
 
     @Override
     public double Area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double Perimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double resultado = 0;
+        resultado = Math.sqrt(getSemiperimeter() * (getSemiperimeter() - getLado(0)) *
+                (getSemiperimeter() - getLado(1)) * (getSemiperimeter() - getLado(2)));
+        return (resultado);
     }
 
     @Override
