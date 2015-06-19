@@ -10,6 +10,11 @@ package Inheritance;
  *
  * @author laboratorio
  */
-public interface IRectangulo extends IParalelogramo {
+public abstract class FiguraGeometrica {
     
+    public abstract double getArea ();
+    public abstract double getPerimetro ();
+    protected abstract void setArea ();
+    protected abstract void setPerimetro ();
+   
 }
