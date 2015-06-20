@@ -13,7 +13,7 @@ public class Rectangulo extends Poligono {
     
     private final int cantidadLadosRectangulo = 4;
     
-    private void CrearCuadrado (double [] Lados)
+    private void CrearRectangulo (double [] Lados)
     {
         super.CrearPoligono(cantidadLadosRectangulo, Lados);
         setArea();
@@ -32,7 +32,7 @@ public class Rectangulo extends Poligono {
      private void AsignarValoresAlRectangulo (double largo, double ancho)
     {
         double[] medidas = {largo, ancho, largo, ancho};
-        CrearCuadrado(medidas);        
+        CrearRectangulo(medidas);        
         // ToDo:  caso de error cuando el triángulo no es válido
     }
     

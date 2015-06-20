@@ -20,7 +20,7 @@ public abstract class Poligono extends FiguraGeometrica{
     protected double SumarLados ()
     {
         double resultado = 0;
-        for (int i = 0; i <= getCantidadLados(); i++)
+        for (int i = 0; i < getCantidadLados(); i++)
             resultado += getMedida (i);
         return (resultado);
     }
@@ -50,19 +50,31 @@ public abstract class Poligono extends FiguraGeometrica{
     
     protected void setCantidadLados (int cantidadLados)
     {
-        this.cantidadLados = cantidadLados;
+        if (cantidadLados > 2)
+            this.cantidadLados = cantidadLados;
+    }
+    
+    protected boolean validaMedidaDeLado (double medida)
+    {
+        return (medida > 0);
+    }
+    
+    protected boolean validaIndiceDeLado (int indice)
+    {
+        return (0 <= indice && indice < getCantidadLados ());
     }
     
     protected void setMedida (double medida, int indice)
     {
-        if (indice < getCantidadLados ())
+        if (validaIndiceDeLado (indice) && 
+                validaMedidaDeLado (medida))
             medidasLados [indice] = medida;
     }
     
     protected double getMedida (int indice)
     {
         double resultado = Double.POSITIVE_INFINITY;
-        if (indice < getCantidadLados ())
+        if (validaIndiceDeLado (indice))
             resultado = medidasLados [indice];
         return resultado;
     }

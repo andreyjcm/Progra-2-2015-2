@@ -35,7 +35,7 @@ public class Triangulo extends Poligono {
     
      public Triangulo (double ladosIguales, double ladoDiferente)
     {
-        AsignarValoresAlTriangulo(ladoDiferente, ladosIguales, ladosIguales);
+        AsignarValoresAlTriangulo(ladosIguales, ladosIguales, ladoDiferente);
         // ToDo:  caso de error cuando el triángulo no es válido
     }
      
