@@ -29,17 +29,20 @@ public class Triangulo extends Poligono {
    }
     
     public Triangulo (double lado)
+            throws Exception
     {
         AsignarValoresAlTriangulo (lado, lado, lado);
     }
     
      public Triangulo (double ladosIguales, double ladoDiferente)
+             throws Exception
     {
         AsignarValoresAlTriangulo(ladosIguales, ladosIguales, ladoDiferente);
         // ToDo:  caso de error cuando el triángulo no es válido
     }
      
      public Triangulo (double lado1, double lado2, double lado3)
+             throws Exception
     {
         AsignarValoresAlTriangulo (lado1, lado2, lado3);
     }
@@ -52,13 +55,20 @@ public class Triangulo extends Poligono {
 
      private void AsignarValoresAlTriangulo (double lado1, double lado2, 
                                 double lado3)
+             throws Exception
     {
-        if (lado1 + lado2 < lado3)
+        if (lado1 + lado2 > lado3)
         {
             double[] MedidasLados = {lado1, lado2, lado3};
             CrearTriangulo(MedidasLados);
         }      
         // ToDo:  caso de error cuando el triángulo no es válido
+        else
+        {
+            Exception ex = new Exception("La medida del lado 1 y 2 " + 
+                                         "NO deben exceder la medida del lado 3.");
+            throw ex;
+        }
     }
     
    
