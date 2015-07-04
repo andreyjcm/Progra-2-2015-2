@@ -14,10 +14,12 @@ public class Automovil extends Transporte{
 
     // Constructor con los parámetros básicos del Automóvil
     public Automovil(int velocidadMaxima, int cantidadRuedas) {
-        super.setEstado(EnumEstado.DETENIDO);
+        super.setEstado(EnumEstado.APAGADO);
         super.setVelocidadMaxima(velocidadMaxima);
         super.setCantidadRuedas(cantidadRuedas);
-        
+        super.setPasajeros(1);
+        super.setAlturaMinima(0);
+        super.setAlturaMaxima(0);
     }
     
     

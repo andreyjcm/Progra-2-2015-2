@@ -11,6 +11,6 @@ package InheritancePart2;
  * @author laboratorio
  */
 public enum EnumEstado {
-        DETENIDO, ARRANCANDO, FRENANDO, AVANZANDO
+        APAGADO, ARRANCANDO, FRENANDO, AVANZANDO
 
 }

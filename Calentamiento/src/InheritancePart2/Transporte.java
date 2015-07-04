@@ -14,10 +14,40 @@ public abstract class Transporte {
     
     protected EnumEstado estado;
 
-    public void setEstado(EnumEstado estado) {
+    protected void setEstado(EnumEstado estado) {
         this.estado = estado;
     }
-
+    
+    public void arrancar ()
+            throws Exception
+    {
+        if (this.getEstado() == EnumEstado.APAGADO )
+            this.setEstado(EnumEstado.ARRANCANDO);
+        else
+        {
+            Exception ex = new Exception("El medio de transporte NO está en estado DETENIDO");
+            throw ex;
+        }
+    }
+    
+    public void frenar ()
+    {
+        this.setEstado(EnumEstado.FRENANDO);
+    }
+    
+    public void apagar ()
+           throws Exception
+    {
+        if (this.getEstado() == EnumEstado.ARRANCANDO ||
+                this.getEstado() == EnumEstado.FRENANDO )
+            this.setEstado(EnumEstado.APAGADO);
+        else
+        {
+            Exception ex = new Exception("El estado medio de transporte NO permite apagarlo.");
+            throw ex;
+        }
+    }
+ 
     public EnumEstado getEstado() {
         return estado;
     }
@@ -29,8 +59,19 @@ public abstract class Transporte {
     }
     
     public void Avanzar ()
+            throws Exception
     {
-        distanciaRecorrida += 1.0;
+        if (this.getEstado() != EnumEstado.APAGADO)
+        {
+            distanciaRecorrida += 1.0;
+            this.setEstado(EnumEstado.AVANZANDO);
+        }
+        else
+        {
+            Exception ex = new Exception ("El estado del " +
+                 "medio de transporte NO permite avanzar.");
+            throw ex;
+        }
     }
     
     protected int velocidadMaxima;
@@ -60,8 +101,20 @@ public abstract class Transporte {
     }
     
     protected int pasajeros;
+
+    public void setPasajeros(int pasajeros) {
+        this.pasajeros = pasajeros;
+    }
     
     protected int alturaMaxima;
+
+    public void setAlturaMaxima(int alturaMaxima) {
+        this.alturaMaxima = alturaMaxima;
+    }
+
+    public void setAlturaMinima(int alturaMinima) {
+        this.alturaMinima = alturaMinima;
+    }
 
     public int getAlturaMaxima() {
         return alturaMaxima;
