@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class Frutas {
 
-    public Frutas(String color, double pesoPromedio, String sabor, String nombre, Date fechaVencimiento) {
+    public Frutas(String color, double pesoPromedio, String sabor, EnumFrutas nombre, Date fechaVencimiento) {
         this.color = color;
         this.pesoPromedio = pesoPromedio;
         this.sabor = sabor;
@@ -36,7 +36,7 @@ public class Frutas {
         return sabor;
     }
 
-    public String getNombre() {
+    public EnumFrutas getNombre() {
         return nombre;
     }
 
@@ -46,6 +46,6 @@ public class Frutas {
     
     double pesoPromedio;
     String sabor;
-    String nombre;
+    EnumFrutas nombre;
     Date fechaVencimiento;
 }

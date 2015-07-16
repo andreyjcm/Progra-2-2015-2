@@ -43,10 +43,8 @@ public class TestSandias {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
+    @Test
     public void Comprar40Sandias() {
-        // lista de sandías
-        ArrayList<Frutas> listaSandias = new ArrayList ();
         // cantidad esperada de sandías
         int expectedQuantity = 40;
         // cantidad real de sandías
@@ -55,17 +53,15 @@ public class TestSandias {
         // cree una nueva verdulería
         Verduleria verduleria = new Verduleria();
         // ingrese las sandías para la venta
-        verduleria.AgregarSandias(listaSandias, 40);
+        verduleria.AgregarSandias(40);
         // determine cuántas sandías hay para vender
-        realQuantity = listaSandias.size();
+        realQuantity = verduleria.CantidadFrutasParaVender(EnumFrutas.SANDIAS);
         // verifique si se cumple la condición de la prueba
          assertTrue(expectedQuantity == realQuantity);
     }
     
     @Test
     public void Comprar40SandiasYVender1() {
-        // lista de sandías
-        ArrayList<Frutas> listaSandias = new ArrayList ();
         // cantidad inicial de sandías
         int initialQuantity = 40;
         // cantidad esperada de sandías
@@ -76,13 +72,13 @@ public class TestSandias {
         // cree una nueva verdulería
         Verduleria verduleria = new Verduleria();
         // ingrese las sandías para la venta
-        verduleria.AgregarSandias(listaSandias, initialQuantity);
+        verduleria.AgregarSandias(initialQuantity);
         // sandía que va a venderse
         Frutas sandiaVendida = null;
         // simula la venta de una sandía
-        sandiaVendida = verduleria.VenderSandia(listaSandias);
+        sandiaVendida = verduleria.VenderSandia();
         // determine cuántas sandías hay para vender
-        realQuantity = listaSandias.size();
+        realQuantity = verduleria.CantidadFrutasParaVender(EnumFrutas.SANDIAS);
         
         // verifique si se cumple la condición de la prueba
          assertTrue(expectedQuantity == realQuantity);
