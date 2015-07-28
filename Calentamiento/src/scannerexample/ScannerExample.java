@@ -8,6 +8,7 @@ package scannerexample;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,12 +24,14 @@ public class ScannerExample {
      */
     public static void main(String[] args) {
         // lea del archivo de notas
-        LecturaNotas notas = new LecturaNotas();
-        notas.CargarNotas("scores.txt");
+        //LecturaNotas notas = new LecturaNotas();
+        //notas.CargarNotas("scores.txt");
         // cargue el archivo binario con datos
-        //EscrituraBinaria escritura = new EscrituraBinaria();
-        //escritura.GrabarDatosBinarios("datosbinarios.txt");
-
+        final String nombreArchivoSalida = "datosbinarios.dat";
+        LecturaEscrituraBinaria lecturaEscritura = new LecturaEscrituraBinaria();
+        lecturaEscritura.GrabarDatosBinarios(nombreArchivoSalida);
+        ArrayList<RegistroVario> listaLeida = null;
+        listaLeida = lecturaEscritura.LeerDatosBinarios(nombreArchivoSalida);
     }
     
 }

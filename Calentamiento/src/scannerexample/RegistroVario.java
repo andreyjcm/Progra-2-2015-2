@@ -5,13 +5,14 @@
  */
 package scannerexample;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author laboratorio
  */
-public class RegistroVario {
+public class RegistroVario implements Serializable{
     String campo1;
     double campo2;
     Date campo3;
