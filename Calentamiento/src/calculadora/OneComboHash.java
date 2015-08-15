@@ -40,11 +40,16 @@ public class OneComboHash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jCBProvincias = new javax.swing.JComboBox();
         jCBCantones = new javax.swing.JComboBox();
         jTFElementoAgregado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jBAgregarElemento = new javax.swing.JButton();
+        jTFCampo1 = new javax.swing.JTextField();
+        jTFCampo2 = new javax.swing.JTextField();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +61,11 @@ public class OneComboHash extends javax.swing.JFrame {
         });
 
         jCBCantones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBCantones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBCantonesActionPerformed(evt);
+            }
+        });
 
         jTFElementoAgregado.setName(""); // NOI18N
 
@@ -73,16 +83,22 @@ public class OneComboHash extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBAgregarElemento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jCBCantones, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCBProvincias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTFElementoAgregado, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBAgregarElemento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCBCantones, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCBProvincias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTFElementoAgregado, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jTFCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTFCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -98,7 +114,11 @@ public class OneComboHash extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(37, 37, 37)
                 .addComponent(jBAgregarElemento)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,6 +136,10 @@ public class OneComboHash extends javax.swing.JFrame {
             sincronizarCBCantones(provinciaSeleccionada.getNumero());
         }
     }//GEN-LAST:event_jCBProvinciasActionPerformed
+
+    private void jCBCantonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCantonesActionPerformed
+        imprimirMensaje();
+    }//GEN-LAST:event_jCBCantonesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +182,10 @@ public class OneComboHash extends javax.swing.JFrame {
     private javax.swing.JComboBox jCBCantones;
     private javax.swing.JComboBox jCBProvincias;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTFCampo1;
+    private javax.swing.JTextField jTFCampo2;
     private javax.swing.JTextField jTFElementoAgregado;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     private void cargarComboBoxes() {
@@ -170,12 +197,12 @@ public class OneComboHash extends javax.swing.JFrame {
         provinceMap.put(400, new Provincia(1, "Limón", 0.0, "LI"));
         provinceMap.put(600, new Provincia(3, "Alajuela", 0.0, "AL"));
         provinceMap.put(700, new Provincia(5, "Cartago", 0.0, "CA"));
-        cantonMap.put(52, new Canton(4, 4, "San Pablo", 0.0, ""));
-        cantonMap.put(49, new Canton(7, 4, "Santo Domingo", 0.0, ""));
-        cantonMap.put(20, new Canton(9, 4, "Santa Marta", 0.0, ""));
-        cantonMap.put(83, new Canton(14, 4, "San Joaquín", 0.0, ""));
-        cantonMap.put(50, new Canton(2, 2, "Moravia", 0.0, ""));
-        cantonMap.put(35, new Canton(11, 2, "Santa Ana", 0.0, ""));
+        cantonMap.put(52, new Canton(4, 4, "San Pablo", 6234.3043, ""));
+        cantonMap.put(49, new Canton(7, 4, "Santo Domingo", 654.92, ""));
+        cantonMap.put(20, new Canton(9, 4, "Santa Marta", 16324.234, ""));
+        cantonMap.put(83, new Canton(14, 4, "San Joaquín", 78234.1234, ""));
+        cantonMap.put(50, new Canton(2, 2, "Moravia", 769014.67, ""));
+        cantonMap.put(35, new Canton(11, 2, "Santa Ana", 7657.5425, ""));
         sincronizarCBProvincias();
         sincronizarCBCantones(0);
         
@@ -214,5 +241,19 @@ public class OneComboHash extends javax.swing.JFrame {
                 jCBCantones.addItem(new Item(c.getNumero(), c.getNombre()));
         }
 */
+    }
+
+    private void imprimirMensaje() {
+        // obtenga el objeto provincia
+        Integer numProvincia = 0;
+        Item provinciaSeleccionada = (Item)jCBProvincias.getSelectedItem();
+        numProvincia = provinciaSeleccionada.getId();
+        Provincia provinciaActual = provinceMap.get(numProvincia);
+        jTFCampo1.setText(provinciaActual.getNumero().toString());
+        Integer numCanton = 0;
+        Item cantonSeleccionado = (Item)jCBCantones.getSelectedItem();
+        numCanton = cantonSeleccionado.getId();
+        Canton cantonActual = cantonMap.get(numCanton);
+        jTFCampo2.setText(String.valueOf(cantonActual.getArea()));
     }
 }
